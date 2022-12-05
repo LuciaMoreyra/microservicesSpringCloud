@@ -1,0 +1,32 @@
+we use a git repo to store all config files and have them centralized in one place.
+
+currency exchange shows the price of conversion from one currency to another
+
+url: http://localhost:8000/currency-exchange/from/USD/to/INR
+
+
+currency conversion shows the price givenby a quantity
+
+http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+http://localhost:8100/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+{
+  "id": 10001,
+  "from": "USD",
+  "to": "INR",
+  "conversionMultiple": 65.00,
+  "quantity": 10,
+  "totalCalculatedAmount": 650.00,
+  "environment": "8000 instance-id"
+}
+
+
+API GATEWAY
+http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/INR
+http://localhost:8765/CURRENCY-CONVERSION/currency-conversion-feign/from/USD/to/INR/quantity/10
+http://localhost:8765/currency-exchange/from/USD/to/INR
+http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+
+
+http://localhost:8761 [eureka server (naming server)]
